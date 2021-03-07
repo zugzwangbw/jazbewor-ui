@@ -9,6 +9,7 @@ const Home: React.FC = () => {
       {/* <ImgHomo />
       <Safety /><p>A ReactJS + Next.js structure made by Jazbewor.</p> */}
         <h1>ReactJS Structure</h1>
+        <p>Teste preview.</p>
         <p>A ReactJS + Next.js structure made by Jazbewor.</p>
       </Container>
   )
