@@ -19,6 +19,11 @@
     "format": "prettier --ignore-path .gitignore \"src/**/*.+(ts|js|tsx)\" --write",
     "postinstall": "husky install"
   },
+  "husky": {
+    "hooks": {
+      "prepare-commit-msg": "exec < /dev/tty && git cz --hook"
+    }
+  },
   "lint-staged": {
     "./src/**/*.{ts,js,jsx,tsx}": [
       "npm lint --fix",
