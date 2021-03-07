@@ -25,6 +25,7 @@ import {
 const Footer: React.FC = () => {
   return (
     <FooterContainer>
+    <FooterContainer>
       <FooterWrap>
         <FooterLinksContainer>
           <FooterLinksWrapper>
@@ -124,6 +125,7 @@ const Footer: React.FC = () => {
           </SocialMediaWrap>
         </SocialMedia>
       </FooterWrap>
+    </FooterContainer>
     </FooterContainer>
   );
 };
