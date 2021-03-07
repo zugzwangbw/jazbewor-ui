@@ -18,6 +18,21 @@ export const Container = styled.div`
     font-size: 24px;
     line-height: 32px;
   }
+
+    @media screen and (max-width: 768px) {
+        h1 {
+            font-size: 2rem;
+            color: ${props => props.theme.colors.blue};
+            margin-top: 20px;
+          }
+
+          p {
+            margin-top: 16px;
+            font-size: 16px;
+            line-height: 16px;
+          }
+    }
+
 `
 
 export const ImgHomo = styled.section`
