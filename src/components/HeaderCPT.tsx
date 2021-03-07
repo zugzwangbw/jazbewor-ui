@@ -32,7 +32,7 @@ const Header = (props) => {
           </Link>
         </NavMenu>
         <NavBtn>
-          <Link href="/signin" passHref>
+          <Link href="/sign-in" passHref>
             <NavBtnLink>Entrar</NavBtnLink>
           </Link>
         </NavBtn>
