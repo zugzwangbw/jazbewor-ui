@@ -13,18 +13,19 @@ export const Icon = styled.div`
 `
 
 export const SideBarContainer = styled.aside<SideBarContainerProps>`
+  background: ${props => props.theme.colors.background};
   position: fixed;
   z-index: 999;
   width: 100%;
   height: 100%;
-  background: ${props => props.theme.colors.background};
   display: grid;
   align-items: center;
-  top: ${({ isOpen }) => (isOpen ? '0' : '-100%')};
+  top: 0;
   left: 0;
-  transition: 0.3s ease-in-out;
-  opacity: ${({ isOpen }) => (isOpen ? '100%' : '0')};
-`
+  transition: all 0.3s ease-in-out;
+  opacity: ${({ isOpen }) => (isOpen ? "100%" : "0")};
+  top: ${({ isOpen }) => (isOpen ? "0" : "-100%")};
+`;
 
 export const CloseIcon = styled(FaTimes)`
   color: ${props => props.theme.colors.white};;
@@ -43,6 +44,11 @@ export const SideBarMenu = styled.ul`
   @media screen and (max-width: 480px) {
     grid-template-rows: repeat(6, 60px);
   }
+
+  @media screen and (max-width: 823px) and (max-height: 411px) {
+    grid-template-rows: repeat(6, 40px);
+  }
+
 `
 
 export const SideBarLink = styled.div`

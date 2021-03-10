@@ -50,16 +50,20 @@ export const NavLogo = styled.div`
   font-size: 1.5rem;
   display: flex;
   align-items: center;
-  margin-left: 24px;
+  margin-left: 5px;
   font-weight: bold;
   text-decoration: none;
   font-family: 'Encode Sans Expanded', sans-serif;
+
+  @media screen and (max-width: 768px) {
+    margin-left: 20px;
+  }
 `;
 
 export const NavMenu = styled.div`
   display: flex;
   align-items: center;
-  margin-right: -24px;
+  /* margin-right: -24px; */
 
   /* Second Nav */
   /* margin-right: 24px; */
