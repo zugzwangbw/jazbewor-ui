@@ -1,12 +1,31 @@
 import Link from 'next/link'
+import { useEffect, useState } from 'react'
 import { FaBars } from 'react-icons/fa'
 import LogoJazbewor from '../../public/logo-p-full.png'
-import { MobileIcon, Nav, NavBtn, NavBtnLink, NavLink, NavMenu, NavLogo } from '../styles/pages/HeaderSTL'
+import { MobileIcon, Navbar, NavBtn, NavBtnLink, NavLink, NavMenu, NavLogo } from '../styles/pages/HeaderSTL'
 
 const Header = (props) => {
+  const [scrollNav, setScrollNav] = useState(false);
+
+  const changeNav = () => {
+    if (window.scrollY >= 80) {
+      setScrollNav(true);
+    } else {
+      setScrollNav(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", changeNav);
+  }, []);
+
+  // const toggleHome = () => {
+  //   scroll.scrollToTop();
+  // };
+
   return (
-    <>
-      <Nav>
+    // <NavbarContainer>
+      <Navbar scrollNav={scrollNav}>
         <Link href="/" passHref>
           <NavLink>
             <NavLogo>
@@ -36,8 +55,8 @@ const Header = (props) => {
             <NavBtnLink>Entrar</NavBtnLink>
           </Link>
         </NavBtn>
-      </Nav>
-    </>
+      </Navbar>
+    // </NavbarContainer>
   )
 }
 

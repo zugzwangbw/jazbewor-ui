@@ -16,7 +16,6 @@ export const Container = styled.div`
   p {
     margin-top: 24px;
     font-size: 24px;
-    line-height: 32px;
   }
 
     @media screen and (max-width: 823px) {
@@ -28,28 +27,15 @@ export const Container = styled.div`
           }
 
           p {
-            margin-bottom: 40px;
             font-size: 18px;
-            line-height: 24px;
           }
     }
 
 `
 
-export const ImgHomo = styled.section`
-    width: 100%;
-    padding-bottom: 500px;
-    background: url(./home-img.svg) center center no-repeat;
-    background-size: cover;
-
-    @media screen and (max-width: 823px) {
-      padding-bottom: 200px;
-    }
-`
-
 export const ImgJazbeworLogo = styled.section`
     width: 100%;
-    padding-bottom: calc(100vh - 600px);
+    padding-bottom: calc(50vh - 100px);
     background: url(./logo-g-full.svg) center center no-repeat;
     background-size: contain;
 

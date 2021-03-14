@@ -33,6 +33,7 @@ export const Icon = styled.div`
   margin-left: 32px;
   margin-top: 32px;
   text-decoration: none;
+  cursor: pointer;
   color: #FCFCFC;
   font-weight: 700;
   font-size: 32px;

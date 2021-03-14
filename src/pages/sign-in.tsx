@@ -16,7 +16,6 @@ const Services: React.FC = () => {
   return (
     <Container>
       <FormWrap>
-        {/* <Icon to="/">Jazbewor</Icon> */}
         <Link href="/" passHref>
           <Icon>Jazbewor</Icon>
         </Link>

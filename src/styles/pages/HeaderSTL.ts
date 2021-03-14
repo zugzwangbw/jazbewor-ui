@@ -1,17 +1,19 @@
 import { FaBars } from 'react-icons/fa'
 import styled from 'styled-components'
+interface NavbarProps { scrollNav: Boolean }
 
-export const Nav = styled.nav`
-  background: rgb(49,28,93);
-  background: radial-gradient(circle, rgba(49,28,93,1) 0%, rgba(16,21,34,1) 100%);
+export const Navbar = styled.nav<NavbarProps>`
+  /* background: radial-gradient(circle, rgba(49,28,93,1) 0%, rgba(16,21,34,1) 100%); */
+  background: ${({ scrollNav }) => (scrollNav ? "transparent": "radial-gradient(circle, rgba(49,28,93,1) 0%, rgba(16,21,34,1) 100%)" )};
   height: 80px;
   display: flex;
   justify-content: space-between;
   padding: 0.5rem calc((100vw - 1000px) / 2);
   z-index: 10;
 
-  /* Third Nav */
-  /* justify-content: flex-start; */
+  @media screen and (max-width: 960px) {
+    transition: 0.8s all ease;
+  }
 `
 
 export const MobileIcon = styled(FaBars)`
@@ -44,7 +46,7 @@ export const NavLink = styled.div`
 `
 
 export const NavLogo = styled.div`
-  color: #FCFCFC;
+  color: ${props => props.theme.colors.white};
   justify-self: flex-start;
   cursor: pointer;
   font-size: 1.5rem;
@@ -63,14 +65,6 @@ export const NavLogo = styled.div`
 export const NavMenu = styled.div`
   display: flex;
   align-items: center;
-  /* margin-right: -24px; */
-
-  /* Second Nav */
-  /* margin-right: 24px; */
-
-  /* Third Nav */
-  /* width: 100vw;
-  white-space: nowrap; */
 
   @media screen and (max-width: 768px) {
     display: none;
@@ -81,10 +75,6 @@ export const NavBtn = styled.div`
   display: flex;
   align-items: center;
   margin-right: 24px;
-
-  /* Third Nav */
-  /* justify-content: flex-end;
-  width: 100vw; */
 
   @media screen and (max-width: 768px) {
     display: none;
