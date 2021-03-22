@@ -1,3 +1,4 @@
+import InfoSection from '@/components/InfoSectionCPT'
 import Presentation from '@/components/PresentationCPT'
 import Safety from '../../public/icons/01.svg'
 import JazbeworLogo from '../../public/logo-p-full.svg'
@@ -7,6 +8,7 @@ const Home: React.FC = () => {
   return (
     <>
       <Presentation />
+      <InfoSection />
       <Container>
         <JazbeworLogo/>
         <h1>ReactJS Structure</h1>

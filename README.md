@@ -3,12 +3,11 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/static/v1?label=PRs&message=welcome&style=for-the-badge&color=24B36B&labelColor=000000" alt="PRs welcome!" />
+  <img src="https://img.shields.io/static/v1?label=PRs&message=welcome&style=for-the-badge&color=blueviolet&labelColor=000000" alt="PRs welcome!" />
 
-  <img alt="License" src="https://img.shields.io/github/license/jpedroschmitz/typescript-nextjs-starter?style=for-the-badge&color=24B36B&labelColor=000000">
+  <img alt="License" src="https://img.shields.io/github/license/zugzwangbw/jazbewor-ui?style=for-the-badge&color=blueviolet&labelColor=000000">
 
 </p>
-
 <br>
 
 A TypeScript starter for Next.js that includes all you need to build amazing projects 🔥
@@ -23,6 +22,12 @@ A TypeScript starter for Next.js that includes all you need to build amazing pro
 - 🗂 **Absolute import** — Import folders and files using the `@` prefix;
 - 🎨 **Styled-Components** — Style control via components;
 - 🌔 **Babel** — Styled-components configuration for next.js and importing images as components;
+
+## 🧰 Tools
+
+  ![Visual Studio Code](https://img.shields.io/badge/-Visual%20Studio%20Code-333333?style=for-the-badge&logo=visual-studio-code&logoColor=007ACC)
+  ![Eclipse](https://img.shields.io/badge/-Eclipse-333333?style=for-the-badge&logo=eclipse-ide&logoColor=2C2255)
+  ![Intellij idea](https://img.shields.io/badge/-Intellij%20idea-333333?style=for-the-badge&logo=intellij-idea&logoColor=abcdef)
 
 ## 🚀 Getting started
 
