@@ -22,6 +22,7 @@ const Presentation = () => {
     setHover(!hover);
   };
   return (
+    <>
     <PresentationContainer>
       <PresentationBg>
         <VideoBg autoPlay loop muted src={"/videos/word.mp4"}/>
@@ -44,6 +45,7 @@ const Presentation = () => {
         </PresentationBtnWrapper>
       </PresentationContent>
     </PresentationContainer>
+    </>
   );
 };
 
