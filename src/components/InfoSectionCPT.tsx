@@ -38,7 +38,7 @@ const InfoSection = () => {
             </Column1>
             <Column2>
               <ImgWrap>
-                <Img src={"/developer.svg"} alt={"Image developer"} />
+                <Img src={"/04.png"} alt={"Image developer"} />
               </ImgWrap>
             </Column2>
           </InfoRow>
