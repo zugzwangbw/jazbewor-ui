@@ -1,11 +1,5 @@
 import Link from 'next/link'
-import {
-  FaFacebook,
-  FaInstagram,
-  FaLinkedin,
-  FaTwitter,
-  FaGithub
-} from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter, FaGithub } from 'react-icons/fa'
 import {
   FooterContainer,
   FooterWrap,
@@ -19,10 +13,10 @@ import {
   SocialLogo,
   WebsiteRights,
   SocialIcons,
-  SocialLink,
-} from "../styles/pages/FotterSTL"
+  SocialLink
+} from '../styles/pages/FotterSTL'
 
-const Footer: React.FC = () => {
+const Footer = () => {
   return (
     <FooterContainer>
       <FooterWrap>
@@ -100,10 +94,8 @@ const Footer: React.FC = () => {
         </FooterLinksContainer>
         <SocialMedia>
           <SocialMediaWrap>
-            <SocialLogo >Jazbewor</SocialLogo>
-            <WebsiteRights>
-              Jazbewor © {new Date().getFullYear()} Todos os direitos reservados.
-            </WebsiteRights>
+            <SocialLogo>Jazbewor</SocialLogo>
+            <WebsiteRights>Jazbewor © {new Date().getFullYear()} Todos os direitos reservados.</WebsiteRights>
             <SocialIcons>
               <SocialLink href="https://github.com/zugzwangbw" target="_blank" aria-label="GitHub">
                 <FaGithub />
@@ -125,7 +117,7 @@ const Footer: React.FC = () => {
         </SocialMedia>
       </FooterWrap>
     </FooterContainer>
-  );
-};
+  )
+}
 
 export default Footer

@@ -1,6 +1,6 @@
 import { Container } from '../styles/pages/HomeSTL'
 
-const Services: React.FC = () => {
+const Service = () => {
   return (
     <Container>
       <h1>Services</h1>
@@ -8,4 +8,4 @@ const Services: React.FC = () => {
   )
 }
 
-export default Services
+export default Service

@@ -1,6 +1,6 @@
 import { Container } from '../styles/pages/HomeSTL'
 
-const Contact: React.FC = () => {
+const Contact = () => {
   return (
     <Container>
       <h1>Contact</h1>

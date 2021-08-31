@@ -61,4 +61,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 Made by Elson Júnior
 <br>
-![Elson Júnior](./public/logo-p-full.png)
+![Elson Júnior](./public/logo-p-full.svg)

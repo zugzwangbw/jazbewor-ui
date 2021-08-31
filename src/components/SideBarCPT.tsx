@@ -1,6 +1,5 @@
-import React from "react";
 import Link from 'next/link'
-
+import React from 'react'
 import {
   CloseIcon,
   Icon,
@@ -12,7 +11,7 @@ import {
   SideBtnWrap
 } from '../styles/pages/SideBarSTL'
 
-const SideBar = ({toggle, isOpen}) => {
+const SideBar = ({ toggle, isOpen }) => {
   return (
     <SideBarContainer onClick={toggle} isOpen={isOpen}>
       <Icon>
@@ -34,7 +33,7 @@ const SideBar = ({toggle, isOpen}) => {
           </Link>
         </SideBarMenu>
         <SideBtnWrap>
-          <Link href="/sign-in" passHref>
+          <Link href="/log-in" passHref>
             <SideBarRoute>Entrar</SideBarRoute>
           </Link>
         </SideBtnWrap>

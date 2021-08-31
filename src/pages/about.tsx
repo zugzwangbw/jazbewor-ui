@@ -1,6 +1,6 @@
 import { Container } from '../styles/pages/HomeSTL'
 
-const About: React.FC = () => {
+const About = () => {
   return (
     <Container>
       <h1>About</h1>

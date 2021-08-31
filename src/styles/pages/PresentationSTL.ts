@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { MdArrowForward, MdKeyboardArrowRight } from "react-icons/md";
+import styled from 'styled-components'
+import { MdArrowForward, MdKeyboardArrowRight } from 'react-icons/md'
 
 export const PresentationContainer = styled.div`
   background: #0c0c0c;
@@ -11,19 +11,15 @@ export const PresentationContainer = styled.div`
   position: relative;
   z-index: 1;
 
-//Darkening the background of video
+  //Darkening the background of video
   :before {
-    content: " ";
-    position:absolute;
+    content: ' ';
+    position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(
-        180deg,
-        rgba(0, 0, 0, 0.1) 0%,
-        rgba(0, 0, 0, 0.5) 100%
-      ),
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.5) 100%),
       linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, transparent 100%);
     z-index: 2;
   }
@@ -59,7 +55,7 @@ export const PresentationContent = styled.div`
 `
 
 export const PresentationH1 = styled.h1`
-  color: ${props => props.theme.colors.white};;
+  color: ${props => props.theme.colors.white};
   font-size: 48px;
   text-align: center;
   margin-top: 24px;
@@ -75,7 +71,7 @@ export const PresentationH1 = styled.h1`
 
 export const PresentationP = styled.p`
   margin-top: 24px;
-  color: ${props => props.theme.colors.white};;
+  color: ${props => props.theme.colors.white};
   font-size: 24px;
   text-align: center;
   max-width: 700px;

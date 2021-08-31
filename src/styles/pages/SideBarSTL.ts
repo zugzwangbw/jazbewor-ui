@@ -1,6 +1,8 @@
 import { FaTimes } from 'react-icons/fa'
 import styled from 'styled-components'
-interface SideBarContainerProps { isOpen: Boolean }
+interface SideBarContainerProps {
+  isOpen: Boolean
+}
 
 export const Icon = styled.div`
   position: absolute;
@@ -23,12 +25,12 @@ export const SideBarContainer = styled.aside<SideBarContainerProps>`
   top: 0;
   left: 0;
   transition: all 0.3s ease-in-out;
-  opacity: ${({ isOpen }) => (isOpen ? "100%" : "0")};
-  top: ${({ isOpen }) => (isOpen ? "0" : "-100%")};
-`;
+  opacity: ${({ isOpen }) => (isOpen ? '100%' : '0')};
+  top: ${({ isOpen }) => (isOpen ? '0' : '-100%')};
+`
 
 export const CloseIcon = styled(FaTimes)`
-  color: ${props => props.theme.colors.white};;
+  color: ${props => props.theme.colors.white}; ;
 `
 
 export const SideBarWrapper = styled.div`
@@ -48,7 +50,6 @@ export const SideBarMenu = styled.ul`
   @media screen and (max-width: 823px) and (max-height: 411px) {
     grid-template-rows: repeat(6, 40px);
   }
-
 `
 
 export const SideBarLink = styled.div`

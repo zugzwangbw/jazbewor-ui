@@ -1,5 +1,4 @@
-import styled from "styled-components";
-
+import styled from 'styled-components'
 
 export const Button = styled.button`
   border-radius: 4px;
@@ -23,6 +22,6 @@ export const Button = styled.button`
   }
 
   @media screen and (max-width: 768px) {
-    font-size: 1.0rem;
+    font-size: 1rem;
   }
 `

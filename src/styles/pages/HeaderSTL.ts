@@ -1,10 +1,13 @@
 import { FaBars } from 'react-icons/fa'
 import styled from 'styled-components'
-interface NavbarProps { scrollNav: Boolean }
+interface NavbarProps {
+  scrollNav: Boolean
+}
 
 export const Navbar = styled.nav<NavbarProps>`
   /* background: radial-gradient(circle, rgba(49,28,93,1) 0%, rgba(16,21,34,1) 100%); */
-  background: ${({ scrollNav }) => (scrollNav ? "transparent": "radial-gradient(circle, rgba(49,28,93,1) 0%, rgba(16,21,34,1) 100%)" )};
+  background: ${({ scrollNav }) =>
+    scrollNav ? 'transparent' : 'radial-gradient(circle, rgba(49,28,93,1) 0%, rgba(16,21,34,1) 100%)'};
   height: 80px;
   display: flex;
   justify-content: space-between;
@@ -18,7 +21,7 @@ export const Navbar = styled.nav<NavbarProps>`
 
 export const MobileIcon = styled(FaBars)`
   display: none;
-  color:  ${props => props.theme.colors.white};
+  color: ${props => props.theme.colors.white};
 
   @media screen and (max-width: 768px) {
     display: block;
@@ -60,7 +63,7 @@ export const NavLogo = styled.div`
   @media screen and (max-width: 768px) {
     margin-left: 20px;
   }
-`;
+`
 
 export const NavMenu = styled.div`
   display: flex;
