@@ -6,7 +6,7 @@
   "author": "Elson Júnior Nunes de Araújo <elson.araujo.bw@gmail.com> (https://github.com/zugzwangbw)",
   "license": "MIT",
   "keywords": [
-    "nextjs",
+    "next.js",
     "starter",
     "typescript"
   ],
@@ -21,9 +21,9 @@
     "commit": "cz"
   },
   "lint-staged": {
-    "./src/**/*": [
-      "npm run lint --fix",
-      "npm run dev format"
+    ".//src//**//*.{ts,js,jsx,tsx}": [
+      "yarn lint --fix",
+      "yarn format"
     ]
   },
   "husky": {
