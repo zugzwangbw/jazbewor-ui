@@ -1,6 +1,5 @@
 import Document, { DocumentContext, DocumentInitialProps, Head, Html, Main, NextScript } from 'next/document'
 import { ServerStyleSheet } from 'styled-components'
-import JazbeworIcon from '../assets/favicon.ico'
 
 export default class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext): Promise<DocumentInitialProps> {
@@ -10,7 +9,10 @@ export default class MyDocument extends Document {
     try {
       ctx.renderPage = () =>
         originalRenderPage({
-          enhanceApp: App => props => sheet.collectStyles(<App {...props} />)
+          enhanceApp: App => props => {
+            const resPageStyle = sheet.collectStyles(<App {...props} />)
+            return resPageStyle
+          }
         })
 
       const initialProps = await Document.getInitialProps(ctx)
@@ -34,10 +36,9 @@ export default class MyDocument extends Document {
         <Head>
           <meta charSet="utf-8" />
 
-          <link href="https://fonts.googleapis.com/css?family=Sora:400,500,700" rel="stylesheet" />
           <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link
-            href="https://fonts.googleapis.com/css2?family=Encode+Sans+Expanded:wght@400;700&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Encode+Sans+Expanded:wght@400;700&family=Sora:wght@400;500;700&display=swap"
             rel="stylesheet"
           />
           <link rel="icon" href="/favicon.ico" />

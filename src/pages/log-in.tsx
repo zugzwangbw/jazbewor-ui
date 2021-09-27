@@ -1,7 +1,7 @@
-import { supabaseClient } from '@/../services/supabase'
-import PaletteLoginSocial from '@/components/widgets/PaletteLoginSocialWGT'
 import Link from 'next/link'
 import { useState } from 'react'
+import { supabaseClient } from '@/services/supabase'
+import PaletteLoginSocial from '@/components/widgets/PaletteLoginSocialWGT'
 import {
   Container,
   Form,
@@ -16,29 +16,22 @@ import {
   Logo
 } from '../styles/pages/LogInSTL'
 
-const LogIn = ({ isLoading }) => {
-  const [email, setEmail] = useState(null)
-  const [password, setPassword] = useState(null)
+const LogIn = () => {
+  const [email, setEmail] = useState<string>(null)
+  const [password, setPassword] = useState<string>(null)
 
-  async function login(email: string, password: string) {
-    console.log(email, password)
-    try {
-      const { user, session, error } = await supabaseClient.auth.signIn(
-        {
-          email: email,
-          password: password
-        },
-        {
-          redirectTo: 'https://jazbewor.com/support'
-        }
-      )
+  async function login() {
+    const { error } = await supabaseClient.auth.signIn(
+      {
+        email,
+        password
+      },
+      {
+        redirectTo: `https://jazbewor.com/support`
+      }
+    )
 
-      if (error) throw error
-    } catch (error) {
-      console.log('Errou', error)
-    } finally {
-      console.log(email, password)
-    }
+    if (error) throw error
   }
 
   return (
@@ -58,7 +51,7 @@ const LogIn = ({ isLoading }) => {
               type="submit"
               onClick={e => {
                 e.preventDefault()
-                login(email, password)
+                login()
               }}
             >
               Continue

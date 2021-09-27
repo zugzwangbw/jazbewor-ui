@@ -1,18 +1,37 @@
 import { User, Session } from '@supabase/supabase-js'
 import { createContext, useEffect, useState } from 'react'
-import { supabaseClient } from '../../services/supabase'
+import { supabaseClient } from '@/services/supabase'
 
 type AuthContextType = {
   user?: User
   session?: Session
+  authenticated?: string
 }
 
 export const AuthContext = createContext({} as AuthContextType)
 
 const AuthProvider = props => {
+  const { children } = props
+
   const [user, setUser] = useState<User>()
   const [session, setSession] = useState<Session>()
-  const [authenticated, setAuthenticated] = useState('not-authenticated')
+  const [authenticated, setAuthenticated] = useState(`not-authenticated`)
+
+  async function checkUser() {
+    const userCheck = await supabaseClient.auth.user()
+    if (userCheck) {
+      setAuthenticated(`authenticated`)
+    }
+  }
+
+  async function handleAuthChange(event, sit): Promise<void> {
+    await fetch(`/api/auth`, {
+      method: `POST`,
+      headers: new Headers({ 'Content-Type': `application/json` }),
+      credentials: `same-origin`,
+      body: JSON.stringify({ event, session: sit })
+    })
+  }
 
   useEffect(() => {
     const currentSession = supabaseClient.auth.session()
@@ -22,36 +41,20 @@ const AuthProvider = props => {
       setUser(currentSession.user)
     }
 
-    const { data } = supabaseClient.auth.onAuthStateChange((event, newSession) => {
-      setSession(newSession)
-      setUser(newSession?.user)
-      handleAuthChange({ event, session: newSession })
-      console.log('Evento -> ', event)
-      event === 'SIGNED_IN' ? setAuthenticated('authenticated') : setAuthenticated('not-authenticated')
+    const { data } = supabaseClient.auth.onAuthStateChange((event, sit) => {
+      setSession(sit)
+      setUser(sit?.user)
+      handleAuthChange(event, sit)
+      event === `SIGNED_IN` ? setAuthenticated(`authenticated`) : setAuthenticated(`not-authenticated`)
     })
 
+    checkUser()
     return () => {
       data.unsubscribe()
     }
   }, [])
 
-  async function checkUser() {
-    const user = await supabaseClient.auth.user()
-    if (user) {
-      setAuthenticated('authenticated')
-    }
-  }
-
-  async function handleAuthChange({ event, session }) {
-    await fetch('/api/auth', {
-      method: 'POST',
-      headers: new Headers({ 'Content-Type': 'application/json' }),
-      credentials: 'same-origin',
-      body: JSON.stringify({ event, session })
-    })
-  }
-
-  return <AuthContext.Provider value={{ user, session }}>{props.children}</AuthContext.Provider>
+  return <AuthContext.Provider value={{ user, session, authenticated }}>{children}</AuthContext.Provider>
 }
 
 export default AuthProvider

@@ -24,7 +24,7 @@ const Presentation = () => {
     <>
       <PresentationContainer>
         <PresentationBg>
-          <VideoBg autoPlay loop muted src={'/videos/word.mp4'} />
+          <VideoBg autoPlay loop muted src="/videos/word.mp4" />
         </PresentationBg>
         <PresentationContent>
           <ImgJazbeworLogo />
@@ -34,7 +34,7 @@ const Presentation = () => {
             do seu negócio.
           </PresentationP>
           <PresentationBtnWrapper>
-            <Link href="/log-in">
+            <Link href="/log-in" passHref>
               <Button onMouseEnter={onHover} onMouseLeave={onHover}>
                 Iniciar {hover ? <ArrowForward /> : <ArrowRight />}
               </Button>

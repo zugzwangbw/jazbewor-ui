@@ -1,7 +1,8 @@
 import { FaTimes } from 'react-icons/fa'
 import styled from 'styled-components'
+
 interface SideBarContainerProps {
-  isOpen: Boolean
+  isOpen: boolean
 }
 
 export const Icon = styled.div`
@@ -25,8 +26,8 @@ export const SideBarContainer = styled.aside<SideBarContainerProps>`
   top: 0;
   left: 0;
   transition: all 0.3s ease-in-out;
-  opacity: ${({ isOpen }) => (isOpen ? '100%' : '0')};
-  top: ${({ isOpen }) => (isOpen ? '0' : '-100%')};
+  opacity: ${({ isOpen }) => (isOpen ? `100%` : `0`)};
+  top: ${({ isOpen }) => (isOpen ? `0` : `-100%`)};
 `
 
 export const CloseIcon = styled(FaTimes)`

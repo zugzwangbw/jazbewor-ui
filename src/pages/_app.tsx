@@ -1,12 +1,13 @@
+import { AppProps } from 'next/app'
+import Head from 'next/head'
+import React from 'react'
 import { ThemeProvider } from 'styled-components'
 import Layout from '../components/LayoutCPT'
 import GlobalStyle from '../styles/global'
 import theme from '../styles/theme'
-import React from 'react'
-import Head from 'next/head'
-import AuthProvider from '@/contexts/AuthContext'
+import AuthProvider from '../contexts/AuthContext'
 
-const MyApp = ({ Component, pageProps }) => {
+const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
   return (
     <ThemeProvider theme={theme}>
       <Layout>

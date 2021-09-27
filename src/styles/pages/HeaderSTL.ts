@@ -1,13 +1,14 @@
 import { FaBars } from 'react-icons/fa'
 import styled from 'styled-components'
+
 interface NavbarProps {
-  scrollNav: Boolean
+  scrollNav: boolean
 }
 
 export const Navbar = styled.nav<NavbarProps>`
   /* background: radial-gradient(circle, rgba(49,28,93,1) 0%, rgba(16,21,34,1) 100%); */
   background: ${({ scrollNav }) =>
-    scrollNav ? 'transparent' : 'radial-gradient(circle, rgba(49,28,93,1) 0%, rgba(16,21,34,1) 100%)'};
+    scrollNav ? `transparent` : `radial-gradient(circle, rgba(49,28,93,1) 0%, rgba(16,21,34,1) 100%)`};
   height: 80px;
   display: flex;
   justify-content: space-between;
