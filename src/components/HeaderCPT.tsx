@@ -4,6 +4,7 @@ import { FaBars } from 'react-icons/fa'
 import { MobileIcon, Navbar, NavBtn, NavBtnLink, NavLink, NavLogo, NavMenu } from '../styles/pages/HeaderSTL'
 
 const Header = props => {
+  const { toggle } = props
   const [scrollNav, setScrollNav] = useState(false)
 
   const changeNav = () => {
@@ -15,7 +16,7 @@ const Header = props => {
   }
 
   useEffect(() => {
-    window.addEventListener('scroll', changeNav)
+    window.addEventListener(`scroll`, changeNav)
   }, [])
 
   // const toggleHome = () => {
@@ -30,7 +31,7 @@ const Header = props => {
           <NavLogo>Jazbewor</NavLogo>
         </NavLink>
       </Link>
-      <MobileIcon onClick={props.toggle}>
+      <MobileIcon onClick={toggle}>
         <FaBars />
       </MobileIcon>
       <NavMenu>

@@ -31,7 +31,7 @@ const InfoSection = () => {
                   tais esse que podemos levantar para você, entre em contato já!
                 </Subtitle>
                 <BtnWrap>
-                  <Link href="/log-in">
+                  <Link href="/log-in" passHref>
                     <Button>Entrar</Button>
                   </Link>
                 </BtnWrap>
@@ -39,7 +39,7 @@ const InfoSection = () => {
             </Column1>
             <Column2>
               <ImgWrap>
-                <Img src={'/04.png'} alt={'Image developer'} />
+                <Img src="/04.png" alt="Image developer" />
               </ImgWrap>
             </Column2>
           </InfoRow>

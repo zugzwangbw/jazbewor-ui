@@ -1,21 +1,22 @@
-import { supabaseClient } from '@/../services/supabase'
+import { FormEvent, useContext, useEffect, useState } from 'react'
+import { GetServerSideProps } from 'next'
 import { AuthContext } from '@/contexts/AuthContext'
 import useTableOrForm from '@/hooks/useTableOrForm'
-import { GetServerSideProps } from 'next'
-import { FormEvent, useContext, useEffect, useState } from 'react'
+import { supabaseClient } from '@/services/supabase'
 import { Container } from '../styles/pages/SupportSTL'
 
 const Support = props => {
-  const { user } = useContext(AuthContext)
+  const { listSupports } = props
+  const { authenticated } = useContext(AuthContext)
+
   const { tableVisible, exibirForm, exibirTable } = useTableOrForm()
-  const [newSupport, setNewSupport] = useState('')
-  const [supports, setSupports] = useState(props.supports)
+  const [newSupport, setNewSupport] = useState(``)
+  const [supports, setSupports] = useState(listSupports)
 
   useEffect(() => {
     supabaseClient
-      .from('supports')
-      .on('INSERT', response => {
-        // console.log(response)
+      .from(`supports`)
+      .on(`INSERT`, response => {
         setSupports(state => [...state, response.new])
       })
       .subscribe()
@@ -28,16 +29,13 @@ const Support = props => {
       return
     }
 
-    const { error } = await supabaseClient.from('supports').insert({
+    const { error } = await supabaseClient.from(`supports`).insert({
       content: newSupport
     })
 
-    if (error) {
-      console.log(error)
-      return
-    }
+    if (error) throw error
 
-    setNewSupport('')
+    setNewSupport(``)
   }
 
   return (
@@ -45,7 +43,10 @@ const Support = props => {
       <form onSubmit={sendNewSupport}>
         {tableVisible ? (
           <div>
-            <button onClick={exibirForm}>Criar</button>
+            <button onClick={exibirForm} type="button">
+              Criar
+            </button>
+            {authenticated}
             <table>
               <tr>
                 <th>Content</th>
@@ -81,7 +82,9 @@ const Support = props => {
               <button type="submit" onClick={exibirForm}>
                 Salvar
               </button>
-              <button onClick={exibirTable}>Voltar</button>
+              <button onClick={exibirTable} type="button">
+                Voltar
+              </button>
             </div>
           </div>
         )}
@@ -97,19 +100,17 @@ export const getServerSideProps: GetServerSideProps = async ctx => {
   if (!user) {
     return {
       redirect: {
-        destination: '/log-in',
+        destination: `/log-in`,
         permanent: false
       }
     }
   }
 
-  const response = await supabaseClient.from('supports').select('*').order('created_at', { ascending: true })
-
-  console.log('Response', response)
+  const response = await supabaseClient.from(`supports`).select(`*`).order(`created_at`, { ascending: true })
 
   return {
     props: {
-      supports: response.body
+      listSupports: response.body
     }
   }
 }
