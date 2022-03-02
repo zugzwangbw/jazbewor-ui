@@ -1,7 +1,7 @@
+import PaletteLoginSocial from '@/components/widgets/PaletteLoginSocialWGT'
+import { supabaseClient } from '@/services/supabase'
 import Link from 'next/link'
 import { useState } from 'react'
-import { supabaseClient } from '@/services/supabase'
-import PaletteLoginSocial from '@/components/widgets/PaletteLoginSocialWGT'
 import {
   Container,
   Form,
@@ -16,7 +16,7 @@ import {
   Logo
 } from '../styles/pages/LogInSTL'
 
-const LogIn = () => {
+function LogIn() {
   const [email, setEmail] = useState<string>(null)
   const [password, setPassword] = useState<string>(null)
 

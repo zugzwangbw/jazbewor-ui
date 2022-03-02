@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
-import Footer from './FooterCPT'
-import Header from './HeaderCPT'
-import SideBar from './SideBarCPT'
+import { useState } from 'react'
+import FooterCPT from './FooterCPT'
+import HeaderCPT from './HeaderCPT'
+import SideBarCPT from './SideBarCPT'
 
-const Layout = ({ children }) => {
+function LayoutCPT({ children }) {
   const [isOpen, setIsOpen] = useState(false)
 
   const toggle = () => {
@@ -11,12 +11,12 @@ const Layout = ({ children }) => {
   }
   return (
     <>
-      <SideBar isOpen={isOpen} toggle={toggle} />
-      <Header toggle={toggle} />
+      <SideBarCPT isOpen={isOpen} toggle={toggle} />
+      <HeaderCPT toggle={toggle} />
       {children}
-      <Footer />
+      <FooterCPT />
     </>
   )
 }
 
-export default Layout
+export default LayoutCPT

@@ -1,10 +1,10 @@
 import InfoSection from '@/components/InfoSectionCPT'
-import Presentation from '@/components/PresentationCPT'
+import PresentationCPT from '@/components/PresentationCPT'
 
-const Home = () => {
+function Home() {
   return (
     <>
-      <Presentation />
+      <PresentationCPT />
       <InfoSection />
     </>
   )

@@ -3,7 +3,7 @@ import { FaFacebook, FaGithub, FaGoogle, FaSignOutAlt } from 'react-icons/fa'
 import { supabaseClient } from '@/services/supabase'
 import { ButtonSocial, ContainerPaletteLoginSocial, IconsSocialLogin, Text } from '../../styles/pages/LogInSTL'
 
-const PaletteLoginSocialWGT = () => {
+function PaletteLoginSocialWGT() {
   async function login(social: Provider) {
     const { error } = await supabaseClient.auth.signIn(
       {

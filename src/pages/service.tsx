@@ -1,6 +1,6 @@
 import { Container } from '../styles/pages/HomeSTL'
 
-const Service = () => {
+function Service() {
   return (
     <Container>
       <h1>Services</h1>

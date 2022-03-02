@@ -1,13 +1,13 @@
-import { FormEvent, useContext, useEffect, useState } from 'react'
-import { GetServerSideProps } from 'next'
-import { AuthContext } from '@/contexts/AuthContext'
+import { useAuth } from '@/hooks/userAuth'
 import useTableOrForm from '@/hooks/useTableOrForm'
 import { supabaseClient } from '@/services/supabase'
+import { GetServerSideProps } from 'next'
+import { FormEvent, useEffect, useState } from 'react'
 import { Container } from '../styles/pages/SupportSTL'
 
-const Support = props => {
+function Support(props) {
   const { listSupports } = props
-  const { authenticated } = useContext(AuthContext)
+  const { authenticated } = useAuth()
 
   const { tableVisible, exibirForm, exibirTable } = useTableOrForm()
   const [newSupport, setNewSupport] = useState(``)
@@ -114,4 +114,5 @@ export const getServerSideProps: GetServerSideProps = async ctx => {
     }
   }
 }
+
 export default Support

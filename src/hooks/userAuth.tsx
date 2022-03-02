@@ -1,18 +1,20 @@
-import { User, Session } from '@supabase/supabase-js'
-import { createContext, useEffect, useState } from 'react'
 import { supabaseClient } from '@/services/supabase'
+import { Session, User } from '@supabase/supabase-js'
+import { createContext, useContext, useEffect, useMemo, useState } from 'react'
 
-type AuthContextType = {
+interface AuthContextType {
   user?: User
   session?: Session
   authenticated?: string
 }
 
-export const AuthContext = createContext({} as AuthContextType)
+interface AuthProviderProps {
+  children: React.ReactNode
+}
 
-const AuthProvider = props => {
-  const { children } = props
+const AuthContext = createContext<AuthContextType>({} as AuthContextType)
 
+export function AuthProvider({ children }: AuthProviderProps) {
   const [user, setUser] = useState<User>()
   const [session, setSession] = useState<Session>()
   const [authenticated, setAuthenticated] = useState(`not-authenticated`)
@@ -54,7 +56,21 @@ const AuthProvider = props => {
     }
   }, [])
 
-  return <AuthContext.Provider value={{ user, session, authenticated }}>{children}</AuthContext.Provider>
+  const valueContextProps = useMemo(
+    () => ({
+      user,
+      session,
+      authenticated
+    }),
+    [user, session, authenticated]
+  )
+  return <AuthContext.Provider value={valueContextProps}>{children}</AuthContext.Provider>
 }
 
-export default AuthProvider
+export function useAuth() {
+  const context = useContext(AuthContext)
+  if (context === undefined) {
+    throw new Error(`useAuth must be used within a AuthProvider`)
+  }
+  return context
+}
