@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { Button } from '../styles/pages/ButtonSTL'
 import { ImgJazbeworLogo } from '../styles/pages/HomeSTL'
 import {
@@ -14,7 +14,7 @@ import {
   VideoBg
 } from '../styles/pages/PresentationSTL'
 
-const Presentation = () => {
+const PresentationCPT = () => {
   const [hover, setHover] = useState(false)
 
   const onHover = () => {
@@ -46,4 +46,4 @@ const Presentation = () => {
   )
 }
 
-export default Presentation
+export default PresentationCPT

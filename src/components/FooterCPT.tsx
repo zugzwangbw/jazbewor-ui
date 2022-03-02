@@ -1,22 +1,22 @@
 import Link from 'next/link'
-import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter, FaGithub } from 'react-icons/fa'
+import { FaFacebook, FaGithub, FaInstagram, FaLinkedin, FaTwitter } from 'react-icons/fa'
 import {
   FooterContainer,
-  FooterWrap,
+  FooterLink,
+  FooterLinkItems,
   FooterLinksContainer,
   FooterLinksWrapper,
-  FooterLinkItems,
   FooterLinkTitle,
-  FooterLink,
+  FooterWrap,
+  SocialIcons,
+  SocialLink,
+  SocialLogo,
   SocialMedia,
   SocialMediaWrap,
-  SocialLogo,
-  WebsiteRights,
-  SocialIcons,
-  SocialLink
+  WebsiteRights
 } from '../styles/pages/FotterSTL'
 
-const Footer = () => {
+const FooterCPT = () => {
   return (
     <FooterContainer>
       <FooterWrap>
@@ -120,4 +120,4 @@ const Footer = () => {
   )
 }
 
-export default Footer
+export default FooterCPT

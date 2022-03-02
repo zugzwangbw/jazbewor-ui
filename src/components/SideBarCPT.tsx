@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import React from 'react'
 import {
   CloseIcon,
   Icon,
@@ -11,7 +10,7 @@ import {
   SideBtnWrap
 } from '../styles/pages/SideBarSTL'
 
-const SideBar = ({ toggle, isOpen }) => {
+const SideBarCPT = ({ toggle, isOpen }) => {
   return (
     <SideBarContainer onClick={toggle} isOpen={isOpen}>
       <Icon>
@@ -42,4 +41,4 @@ const SideBar = ({ toggle, isOpen }) => {
   )
 }
 
-export default SideBar
+export default SideBarCPT

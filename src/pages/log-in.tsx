@@ -1,7 +1,7 @@
+import PaletteLoginSocial from '@/components/widgets/PaletteLoginSocialWGT'
+import { supabaseClient } from '@/services/supabase'
 import Link from 'next/link'
 import { useState } from 'react'
-import { supabaseClient } from '@/services/supabase'
-import PaletteLoginSocial from '@/components/widgets/PaletteLoginSocialWGT'
 import {
   Container,
   Form,

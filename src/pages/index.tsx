@@ -1,10 +1,11 @@
 import InfoSection from '@/components/InfoSectionCPT'
-import Presentation from '@/components/PresentationCPT'
+import PresentationCPT from '@/components/PresentationCPT'
+import { NextPage } from 'next'
 
-const Home = () => {
+const Home: NextPage = () => {
   return (
     <>
-      <Presentation />
+      <PresentationCPT />
       <InfoSection />
     </>
   )

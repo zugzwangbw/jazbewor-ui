@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import React from 'react'
 import { Button } from '../styles/pages/ButtonSTL'
 import {
   BtnWrap,
@@ -28,7 +27,7 @@ const InfoSection = () => {
                 <Heading>Valorize seu negócio.</Heading>
                 <Subtitle>
                   Levamos significativa valorização para o seu negócio, sistematizando e automatizando seus procedimento
-                  tais esse que podemos levantar para você, entre em contato já!
+                  tais esse que podemos mapear para você, entre em contato já!
                 </Subtitle>
                 <BtnWrap>
                   <Link href="/log-in" passHref>
