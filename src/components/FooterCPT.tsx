@@ -16,7 +16,7 @@ import {
   WebsiteRights
 } from '../styles/pages/FotterSTL'
 
-const FooterCPT = () => {
+function FooterCPT() {
   return (
     <FooterContainer>
       <FooterWrap>

@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import { FaBars } from 'react-icons/fa'
 import { MobileIcon, Navbar, NavBtn, NavBtnLink, NavLink, NavLogo, NavMenu } from '../styles/pages/HeaderSTL'
 
-const HeaderCPT = props => {
+function HeaderCPT(props) {
   const { toggle } = props
   const [scrollNav, setScrollNav] = useState(false)
 

@@ -1,6 +1,6 @@
 import { Container } from '../styles/pages/HomeSTL'
 
-const Contact = () => {
+function Contact() {
   return (
     <Container>
       <h1>Contact</h1>

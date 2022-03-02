@@ -16,7 +16,7 @@ import {
   Logo
 } from '../styles/pages/LogInSTL'
 
-const LogIn = () => {
+function LogIn() {
   const [email, setEmail] = useState<string>(null)
   const [password, setPassword] = useState<string>(null)
 

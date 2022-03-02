@@ -10,7 +10,7 @@ import {
   SideBtnWrap
 } from '../styles/pages/SideBarSTL'
 
-const SideBarCPT = ({ toggle, isOpen }) => {
+function SideBarCPT({ toggle, isOpen }) {
   return (
     <SideBarContainer onClick={toggle} isOpen={isOpen}>
       <Icon>

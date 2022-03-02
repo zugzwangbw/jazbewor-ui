@@ -3,7 +3,7 @@ import FooterCPT from './FooterCPT'
 import HeaderCPT from './HeaderCPT'
 import SideBarCPT from './SideBarCPT'
 
-const LayoutCPT = ({ children }) => {
+function LayoutCPT({ children }) {
   const [isOpen, setIsOpen] = useState(false)
 
   const toggle = () => {
